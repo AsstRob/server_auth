@@ -35,10 +35,10 @@ const show = (req, res, next)=>{
 // store a user
 const store = (req, res, next) =>{
     let user = new User({
-        name: res.body.name,
-        designation: res.body.designation,
-        email: res.body.email,
-        phone: res.body.phone,
+        name: req.body.name,
+        designation: req.body.designation,
+        email: req.body.email,
+        phone: req.body.phone,
     })
     user.save()
     .then(response => {
@@ -54,7 +54,7 @@ const store = (req, res, next) =>{
 };
 
 // update an user
-const update = (req, res, next => {
+const update = (req, res, next) => {
     let userID = req.body.userID
 
     let updateData = {
@@ -75,7 +75,7 @@ const update = (req, res, next => {
             message: 'An error Occured!'
         })
     })
-})
+}
 
 // delete an employee
 const destroy = (req, res, next) => {
