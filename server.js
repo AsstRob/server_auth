@@ -23,8 +23,8 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
 
 app.listen(port, ()=>{
-    console.log(`server is running on port ${port}`)
+    console.log(`server is running on port ${port}`) 
 });
 
 app.use('/api/user', UserRouter);
-app.use('/api')
+app.use('/api', AuthRouter);
