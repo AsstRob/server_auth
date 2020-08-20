@@ -48,9 +48,9 @@ const login = (req, res, next) => {
                     })
                 }
                 if(result){
-                    let token = jwt.sign({name: user.name},  'verySecretValue', {expiresIn: '1h'}) //create token using name and it expire in 1 hour
+                    let token = jwt.sign({name: user.name},  'secretValue', {expiresIn: '1h'}) //create token using name and it expire in 1 hour
                     // verySecretValue is the identity of the token
-                    
+
                     res.json({
                         message: 'Login Successfull',
                         token: token
